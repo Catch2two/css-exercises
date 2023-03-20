@@ -4,10 +4,20 @@ body, html {
 }
 
 .container {
+  display: grid;
+  grid-template-rows: repeat(4, 200px);
+  grid-template-columns: repeat(2, 300px);
   text-align: center;
   height: 100%;
   padding: 16px;
+  gap: 15px;
   box-sizing: border-box;
+  grid-template-areas:
+  "header header header header"
+  "sidebar nav nav nav"
+  "sidebar article article article"
+  "sidebar article article article"
+  "footer footer footer footer" ;
 }
 
 .container div {
@@ -15,23 +25,27 @@ body, html {
   font-size: 32px;
   font-family: Helvetica;
   font-weight: bold;
-  color: white;
+  color: rgb(255, 255, 255);
   border-radius: 15px;
 }
 
 .header {
+  grid-area: header;
   background-color: #FFDE22;
 }
 
 .sidebar {
+  grid-area: sidebar;
   background-color: #FF7755;
 }
 
 .nav {
+  grid-area: nav;
   background-color: #00DDFF;
 }
 
 .article {
+  grid-area: article;
   background-color: #bccbde;
 }
 
@@ -43,5 +57,6 @@ body, html {
 }
 
 .footer {
+  grid-area: footer;
   background-color: #393f4d;
 }
